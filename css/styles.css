@@ -1,0 +1,51 @@
+*{
+    font-family: 'Comfortaa', cursive;
+}
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form1{
+    display: none;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 35%;
+    height: 30%;
+    justify-content: center;
+    background-color: rgb(150, 187, 243);
+    align-items: center;
+}
+.button-1{
+    width:25%;
+    height: 20%;
+    border-radius: 20px;
+    font-size:larger;
+    border: 0px;
+}
+.signup{
+    display: none;
+    height: 45%;
+    row-gap: 12px;
+}
+.input-signup{
+    width: 75%;
+    height: 10%;
+}
+
+.submit{
+    height:15% ;
+}
+
+.login{
+    display: flex;
+    height:40%;
+    row-gap: 10px;
+}
+
+.input-login{
+    width:75%;
+    height:10%;
+}
