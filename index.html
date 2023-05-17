@@ -10,7 +10,7 @@
     <body>
         <div class="container">
             <form name="login-signup-form" class="form1" id="login-signup-form">
-                <button type="button" class="button-1 login-btn" onclick="">Login</button>
+                <button type="button" class="button-1 login-btn" onclick="Login()">Login</button>
                 <button type="button" class="button-1 signup-btn" onclick="SignUp()">Sign Up</button>
             </form>
             <form name="signup" class="form1 signup" action="./php/signup.php" method="POST" id="signup">
@@ -20,13 +20,15 @@
                 <input type="password" placeholder="Password" autocomplete="off" name="Password" class="input-signup">
                 <input type="password" placeholder="Confirm Password" autocomplete="off" name="Confirm" class="input-signup">
                 <button class="button-1 submit" type="submit">Submit</button>
+                <button class="button-1 back" type="button" onclick="Back(document.getElementById('signup'))">Back</button>
             </form>
             <form name="login" class="form1 login" action="./php/login.php" method="POST" id="login">
                 <p>Login</p>
                 <input type="text" placeholder="Name" autocomplete="off" name="Name" class="input-login">
                 <input type="email" placeholder="Email" autocomplete="off" name="Email" class="input-login">
                 <input type="password" placeholder="Enter Password" autocomplete="off" name="Password" class="input-login">
-                <button class="button-1 submit" type="submit">Submit</button>  
+                <button class="button-1 submit" type="submit">Submit</button>
+                <button class="button-1 back" type="button" onclick="Back(document.getElementById('login'))">Back</button>  
             </form>
         </div>
         <script src="./script/script.js"></script>
