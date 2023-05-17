@@ -1,5 +1,9 @@
 <?php
+    session_start();
+    $_SESSION["name"]="";
+    $_SESSION["id"]="";
     $mysqli=require __DIR__."/db_connection.php";
+    $flag=0;
 
     $name=$_POST["Name"];
     $email=$_POST["Email"];
@@ -12,12 +16,18 @@
 
     if ($row["password"]==$pass)
     {
-        header("location:/ChatApp/Home.html");
+        $flag=1;
+        header("location:/ChatApp/php/Home.php");
+        $_SESSION["name"]=$row["name"];
+        $_SESSION["id"]=$row["id"];
     }
     else{
         echo "Wrong Password or Username";
     }}
     else{
         echo "No user Found ";
+    }
+    if($flag==0){
+        session_destroy();
     }
 ?>
