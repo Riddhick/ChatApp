@@ -1,0 +1,23 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1.5fr;
+    height: 100%;
+}
+.left{
+    background-color: brown;
+    height: 100%;
+}
+.center{
+    background-color: aqua;
+}
+.right{
+    background-color: bisque;
+}
+
+.name-bar{
+    background-color: black;
+    color: aliceblue;
+    padding-top: 2%;
+    padding-left: 1.5%;
+    height:5%;
+}
