@@ -9,8 +9,8 @@
 
     $sql1="SELECT * FROM user WHERE email='$email'";
     $record=mysqli_query($conn,$sql1);
-
-    if($record==NULL){
+    $num_rec=mysqli_num_rows($record);
+    if($num_rec==0){
     //inserting the user-table value
     $sql="INSERT INTO user values(?,?,?,?)";
    

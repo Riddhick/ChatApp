@@ -1,7 +1,7 @@
 <?php
     session_start();
-    //echo $_SESSION["name"];
-    //echo $_SESSION["id"];
+   // $user_name=$_SESSION["name"];
+    $user_id= $_SESSION["id"];
 ?>
 <html>
 <head>
@@ -10,7 +10,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="pannel left">Friend List</div>
+        <div class="pannel left">
+            <div class="heading-left">Friend List</div>
+            <div class="friendlist">
+            <?php $mysqli=require __DIR__."/db_connection.php";
+            $sql="SELECT name FROM user WHERE id!='$user_id'";
+            $records=mysqli_query($conn,$sql);
+            foreach ($records as $record){
+                //$row=mysqli_fetch_assoc($record);
+                echo $record["name"];?>
+                <br>
+            <?php
+            } 
+            ?></div>
+        </div>
         <div class="pannel center">
             <div class="name-bar"><?php echo $_SESSION["name"]  ?>
         </div>
