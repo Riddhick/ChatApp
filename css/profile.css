@@ -8,6 +8,8 @@
 }
 .center{
     background-color: aqua;
+    display: flex;
+    flex-direction: column;
 }
 .right{
     background-color: bisque;
@@ -33,4 +35,17 @@
     padding-right: 1%;
     padding-top: 1.5%;
     padding-left:1.5%;
+}
+.message-show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.message-text{
+    display: flex;
+    flex-direction: column;
+    height:80%;
+}
+.receiver-bar{
+    display: none;
 }
