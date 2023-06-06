@@ -18,14 +18,17 @@
                     <?php $mysqli=require __DIR__."/db_connection.php";
                     $sql="SELECT name FROM user WHERE id!='$user_id'";
                     $records=mysqli_query($conn,$sql);
+                    $i=0;
                     foreach ($records as $record){
                         //$row=mysqli_fetch_assoc($record);?>
                         <div class="friend">
-                        <text id="friend-id"><?php echo $record["name"];?></text>
-                    <?php } 
+                        <text id="friend-id<?php echo $i;?>"><?php echo $record["name"];?></text>
+                        <button class="btn1" id="<?php echo $i;?>" type="button" onclick=openPrompt(this.id)>Message</button>
+                </div> 
+                    <?php
+                        $i=$i+1; } 
                     ?>
-                    <button class="btn1" type="button" onclick=openPrompt()>Message</button>
-                </div>
+                    
             </div>
         </div>
         <div class="pannel center" id="center-pannel">
