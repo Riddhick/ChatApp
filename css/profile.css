@@ -54,3 +54,25 @@
 .receiver-bar{
     display: none;
 }
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.message-send{
+    width: fit-content;
+    background-color: aliceblue;
+    text-align:right;
+    height: auto;
+}
+.message-received{
+    width: fit-content;
+    background-color: blue;
+    color: aliceblue;
+    text-align: left;
+    height:auto;
+}
+.userid{
+    display: none;
+}

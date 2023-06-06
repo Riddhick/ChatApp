@@ -16,13 +16,14 @@
             <div class="friendlist">
 
                     <?php $mysqli=require __DIR__."/db_connection.php";
-                    $sql="SELECT name FROM user WHERE id!='$user_id'";
+                    $sql="SELECT name,id FROM user WHERE id!='$user_id'";
                     $records=mysqli_query($conn,$sql);
                     $i=0;
                     foreach ($records as $record){
                         //$row=mysqli_fetch_assoc($record);?>
                         <div class="friend">
                         <text id="friend-id<?php echo $i;?>"><?php echo $record["name"];?></text>
+                        <text class="userid" id="user-id<?php echo $i;?>"><?php echo $record["id"];?></text>
                         <button class="btn1" id="<?php echo $i;?>" type="button" onclick=openPrompt(this.id)>Message</button>
                 </div> 
                     <?php
@@ -36,6 +37,10 @@
             </div>
             <div class="message-text">
                 <div class="name-bar receiver-bar" id="receiver-name"></div>
+                <div class="message">
+                    <div class="message-send">This is a send Message</div>
+                    <div class="message-received">This is a received Message</div>
+                </div>
             </div>
             <div class="message-show">
                 <form name="message">
