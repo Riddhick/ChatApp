@@ -1,7 +1,12 @@
+var receiver_id;
+
 function showMessages(u_id,value){
+    receiver_id="";
     var user=u_id.concat(value);
     var getUser=document.getElementById(user);
     //console.log(getUser.innerText);
+    receiver_id=getUser.innerText;
+    //console.log(receiver_id);
 }
 function openPrompt(value){
    // var f_id= document.getElementById("friend-id");
@@ -15,4 +20,29 @@ function openPrompt(value){
     receiver.style.display="flex";
     receiver.innerText=name.innerText ;
     showMessages(u_id,value);
+}
+
+function sendData(){
+    var mes=document.getElementById("data").value;
+    var rec=receiver_id;
+    document.getElementById("data").value="";
+    //console.log(rec,mes);
+    sendToDatabase(mes,rec);
+}
+
+function sendToDatabase(mes,rec){
+    var data={
+        message:mes,
+        receiveId:rec
+    };
+    fetch("/ChatApp/php/send_message.php",{
+        method:"POST",
+        body: JSON.stringify(data),
+        headers: {
+                "Content-Type": "application/json",
+        },
+        
+    })
+    .then((response) => response.text())
+    .then((data) => alert(data));
 }

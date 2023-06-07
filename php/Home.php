@@ -7,7 +7,9 @@
 <head>
     <title>Main</title>
     <link rel="stylesheet" href="/ChatApp/css/profile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../script/message.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -43,13 +45,14 @@
                 </div>
             </div>
             <div class="message-show">
-                <form name="message">
-                    <input type="text" value="" autocomplete="off" name="data" placeholder="Enter Message">
-                    <button type="Submit" class="btn1">Send</button>
+                <form name="message" action="" method="POST" id="messageform">
+                    <input type="text" value="" autocomplete="off" name="data" id="data" placeholder="Enter Message">
+                    <button type="Button" class="btn1" onclick="sendData()">Send</button>
                 </form>
             </div>
         </div>
         <div class="pannel right">Settings</div>
     </div>
+   
 </body>
 </html>
