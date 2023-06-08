@@ -27,6 +27,7 @@ function sendData(){
     var rec=receiver_id;
     document.getElementById("data").value="";
     //console.log(rec,mes);
+    //getFromDatabase(rec);
     sendToDatabase(mes,rec);
 }
 
@@ -36,6 +37,23 @@ function sendToDatabase(mes,rec){
         receiveId:rec
     };
     fetch("/ChatApp/php/send_message.php",{
+        method:"POST",
+        body: JSON.stringify(data),
+        headers: {
+                "Content-Type": "application/json",
+        },
+        
+    })
+    .then((response) => response.text())
+    .then((data) => alert(data));
+    getFromDatabase(rec);
+}
+
+function getFromDatabase(rec){
+    var data={
+        receiveId:rec
+    };
+    fetch("/ChatApp/php/get_message.php",{
         method:"POST",
         body: JSON.stringify(data),
         headers: {
