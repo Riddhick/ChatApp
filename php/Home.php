@@ -39,7 +39,7 @@
             </div>
             <div class="message-text">
                 <div class="name-bar receiver-bar" id="receiver-name"></div>
-                <div class="message">
+                <div class="message" id="message">
                     <div class="message-send" id="message_send"></div>
                     <div class="message-received" id="message_received">This is a received Message</div>
                 </div>

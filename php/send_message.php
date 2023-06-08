@@ -12,9 +12,5 @@
    /* $sql="INSERT into Message(sender,receiver,message,time) values('$user_id','$receive_id','$message','$date')";
     mysqli_query($conn,$sql);
     echo $receive_id.$message.$user_id;*/
-    $sql2="SELECT * FROM message WHERE sender='$user_id' and receiver='$receive_id'";
-    $result=mysqli_query($conn,$sql2);
-    foreach($result as $res){
-        echo $res["message"];
-    }
+    
 ?>

@@ -62,5 +62,5 @@ function getFromDatabase(rec){
         
     })
     .then((response) => response.text())
-    .then((data) => alert(data));
+    .then((data) => document.getElementById("message").innerHTML=data);
 }
