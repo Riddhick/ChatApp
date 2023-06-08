@@ -6,6 +6,7 @@ function showMessages(u_id,value){
     var getUser=document.getElementById(user);
     //console.log(getUser.innerText);
     receiver_id=getUser.innerText;
+    getFromDatabase(receiver_id);
     //console.log(receiver_id);
 }
 function openPrompt(value){
@@ -19,6 +20,7 @@ function openPrompt(value){
     var name=document.getElementById(newid);
     receiver.style.display="flex";
     receiver.innerText=name.innerText ;
+
     showMessages(u_id,value);
 }
 
@@ -45,7 +47,7 @@ function sendToDatabase(mes,rec){
         
     })
     .then((response) => response.text())
-    .then((data) => alert(data));
+    //.then((data) => alert(data));
     getFromDatabase(rec);
 }
 
@@ -62,5 +64,5 @@ function getFromDatabase(rec){
         
     })
     .then((response) => response.text())
-    .then((data) => document.getElementById("message").innerHTML=data);
+    .then((data) => document.getElementById("message_send").innerText=data);
 }
