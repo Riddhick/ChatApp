@@ -6,15 +6,22 @@
 
     $receive_id=$data['receiveId'];
    
-    $sql2="SELECT * FROM message WHERE sender IN ('$user_id','$receive_id')  AND receiver IN ('$receive_id','$user_id') ORDER BY id ASC";
+    $sql2="SELECT * FROM message ORDER BY id ASC";
     $result=mysqli_query($conn,$sql2);
     foreach($result as $res){
         if($res["sender"]==$user_id){
-             echo $res["message"];
+             echo '<div class="message_send" style=" width: fit-content;
+             background-color: aliceblue;
+             text-align:right;
+             height: auto;">'.$res["message"].'</div>';
        
         }
-        else if($res["receiver"]==$receive_id){
-         echo $res["message"];
+        else if($res["sender"]==$receive_id){
+         echo '<div class="message_received" style="width: fit-content;
+         background-color: blue;
+         color: aliceblue;
+         text-align: left;
+         height:auto;">'.$res["message"].'</div>';
         
         }
     }
