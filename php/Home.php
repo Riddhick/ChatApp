@@ -36,15 +36,16 @@
         </div>
         <div class="pannel center" id="center-pannel">
             <div class="name-bar"><?php echo $_SESSION["name"]  ?>
+            <button type="Button" class="button" onclick="back()">Back</button>
             </div>
-            <div class="message-text">
+            <div class="message-text" id="message-text">
                 <div class="name-bar receiver-bar" id="receiver-name"></div>
                 <div class="message" id="message">
                     <div class="message-send" id="message_send"></div>
-                    <div class="message-received" id="message_received">This is a received Message</div>
+                    <div class="message-received" id="message_received"></div>
                 </div>
             </div>
-            <div class="message-show">
+            <div class="message-show" id="message-show">
                 <form name="message" action="" method="POST" id="messageform">
                     <input type="text" value="" autocomplete="off" name="data" id="data" placeholder="Enter Message">
                     <button type="Button" class="btn1" onclick="sendData()">Send</button>

@@ -11,6 +11,7 @@ function showMessages(u_id,value){
 }
 function openPrompt(value){
    // var f_id= document.getElementById("friend-id");
+    document.getElementById("message").style.display="flex"
     var receiver=document.getElementById("receiver-name");
     var f_id="friend-id";
     var u_id="user-id"
@@ -20,8 +21,14 @@ function openPrompt(value){
     var name=document.getElementById(newid);
     receiver.style.display="flex";
     receiver.innerText=name.innerText ;
-
+    document.getElementById("message-show").style.display="flex";
     showMessages(u_id,value);
+}
+
+function back(){
+    document.getElementById("receiver-name").style.display="none";
+    document.getElementById("message-show").style.display="none";
+    document.getElementById("message").style.display="none";
 }
 
 function sendData(){
@@ -66,3 +73,4 @@ function getFromDatabase(rec){
     .then((response) => response.text())
     .then((data) => document.getElementById("message").innerHTML=data);
 }
+

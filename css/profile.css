@@ -42,7 +42,7 @@
     padding-left:1.5%;
 }
 .message-show{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
