@@ -9,7 +9,7 @@ function showMessages(u_id,value){
     receiver_id=getUser.innerText;
     getFromDatabase(receiver_id);
     //console.log(receiver_id);
-    TimeOut=setTimeout(showMessages(u_id,value),1000)
+    TimeOut=setTimeout(getFromDatabase(receiver_id),1000) //auto reload messages after 1000ms 
 }
 function openPrompt(value){
    // var f_id= document.getElementById("friend-id");
@@ -31,7 +31,7 @@ function back(){
     document.getElementById("receiver-name").style.display="none";
     document.getElementById("message-show").style.display="none";
     document.getElementById("message").style.display="none";
-    clearTimeout(TimeOut);
+    clearTimeout(TimeOut);  //stop auto reloading messages 
 }
 
 function sendData(){
