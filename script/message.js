@@ -1,4 +1,5 @@
 var receiver_id;
+var TimeOut;
 
 function showMessages(u_id,value){
     receiver_id="";
@@ -8,6 +9,7 @@ function showMessages(u_id,value){
     receiver_id=getUser.innerText;
     getFromDatabase(receiver_id);
     //console.log(receiver_id);
+    TimeOut=setTimeout(showMessages(u_id,value),1000)
 }
 function openPrompt(value){
    // var f_id= document.getElementById("friend-id");
@@ -29,6 +31,7 @@ function back(){
     document.getElementById("receiver-name").style.display="none";
     document.getElementById("message-show").style.display="none";
     document.getElementById("message").style.display="none";
+    clearTimeout(TimeOut);
 }
 
 function sendData(){
