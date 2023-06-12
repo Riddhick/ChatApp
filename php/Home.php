@@ -2,6 +2,9 @@
     session_start();
    // $user_name=$_SESSION["name"];
     $user_id= $_SESSION["id"];
+    if($user_id==NULL){
+        header('Location: /ChatApp/login.html');
+    }
 ?>
 <html>
 <head>
@@ -52,7 +55,14 @@
                 </form>
             </div>
         </div>
-        <div class="pannel right">Settings</div>
+        <div class="pannel right">
+            <div class="heading-right">Settings</div>
+            <div class="right-container">
+                <img src="profile.jpg"> 
+                <button type="Buttton" class="btn1" onclick="">Log Out</button>
+            </div>
+            
+        </div>
     </div>
    
 </body>
